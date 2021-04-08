@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>College Choice Creator</title>
+    <link rel="stylesheet" href="creativeproject.css"/>
+    <script src="creativeproject.js"></script>
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap');
+</style>
+  </head>
+
+  <body>
+      <section id = "main-view">
+      <nav> 
+          <ul>
+              <li><a href="default.asp">Home</a></li>
+              <li><a href="news.asp">Liberal Arts</a></li>
+              <li><a href="contact.asp">Universities</a></li>
+              <li><a href="about.asp">Online Colleges</a></li>
+          </ul>
+      </nav>
+    <header id = "title">
+      <h1>College Choice Creator</h1>
+            <p> Let us help you in finding the best fit for your undergraduate carrer. With around 5,300 different colleges in the U.S. to choose from, the school search process can seem daunting and be exhausting. Through filling out a couple of questions we can help narrow the search together. Let's get started</p>
+              <button type = "button" id = "start"> Start! </button>
+  </header>
+          <footer>
+          <img id = "usnews" src = https://www.wane.com/wp-content/uploads/sites/21/2020/09/best-colleges.jpg alt = "US NEWS COLLEGE RANKING pic"> 
+          <img id = "sat" src = https://www.insidehighered.com/sites/default/server_files/media/SAT_2.jpg alt = "SAT pic">
+  </footer>
+  </section>
+      
+  <section id="form1" class= "hidden">
+            <nav> 
+          <ul>
+              <li><a href="default.asp">Home</a></li>
+              <li><a href="news.asp">Liberal Arts</a></li>
+              <li><a href="contact.asp">Universities</a></li>
+              <li><a href="about.asp">Online Colleges</a></li>
+          </ul>
+      </nav>
+          <h1> College Choice Tool: Price </h1>
+      <div id = "content">
+          <p> Colleges range in price depending on if they are public, private, in-state, and out of state. By selecting your price range we can better select matches that will fit your needs. If in need of federal aid, feel free to check out the federal aid link here: <a href = https://studentaid.gov/h/apply-for-aid/fafsa> FAFSA </a>. There will be time to investigate federal aid options for each match at the end of the survey as well.</p>
+        <label for="price"> Choose an annual tuition price:</label>
+        <select class="price">
+      <option value="0-5000"> $0.00 to $5,000</option>
+      <option value="5000-10000"> $5,001 to $10,000</option>
+      <option value="10000-20000"> $10,001 to $20,000</option>
+      <option value="20000-30000"> 20,001 to $30,000</option>
+      <option value="30000-40000"> $30,001 to $40,000</option>
+      <option value="40000-50000"> $40,001 to $50,000</option>
+      <option value="50000-60000"> $50,001 to $60,000</option>
+      <option value="60000-70000"> $60,001 to $70,000</option>
+      <option value="70000-80000"> $70,001 to $80,000</option>
+      <option value="80000-90000"> $80,001 to $90,000</option>
+      <option value="90000-100000"> $90,001 to $100,000</option>
+      <option value="No limit"> Price does not matter</option>
+        </select>
+    <div class="considerLower">
+      <p> Do you want to consider schools with tuition below your selected range?</p>
+      <div class="yes">
+        <label for="Yes"> Yes </label>
+        <input type="checkbox" name="yes consider lower" value="Yes">
+      </div>
+    </div>
+    <div class="considerHigher">
+      <p> Do you want to consider schools with tuition above your selected range?</p>
+      <div class="yes">
+        <label for="Yes"> Yes </label>
+        <input type="checkbox" name="yes consider higher" value="Yes">
+      </div>
+    </div>
+          <button type = "button" id = "next1"> Next! </button>
+      </div>
+</section>
+  </body>
+</html>

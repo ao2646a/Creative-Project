@@ -7,6 +7,10 @@
         document.getElementById("next1").onclick = next1;
         
         document.getElementById("back2").onclick = back2;
+        
+         document.getElementById("next2").onclick = next2;
+        
+        document.getElementById("back3").onclick = back3;
     }
     
     
@@ -33,5 +37,18 @@
         document.querySelector("#form2").classList.add("hidden");
          
     }
+    
+       function next2 (){
+        document.querySelector("#form2").classList.add("hidden");
+        document.querySelector("#form3").classList.remove("hidden");
+        document.querySelector("body").style.backgroundImage = "none";
+    }
+
+    function back3 (){
+         document.querySelector("#form2").classList.remove("hidden");
+        document.querySelector("#form3").classList.add("hidden");
+         
+    }
+    
     
 })();

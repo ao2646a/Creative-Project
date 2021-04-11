@@ -18,7 +18,7 @@
 
         document.getElementById("next3").onclick = next3;
 
-        document.getElementById("begin").onclick = startQuiz;
+        //document.getElementById("begin").onclick = startQuiz;
 
 
     }
@@ -140,24 +140,24 @@
 
     }
 
-    function pricefx(){
-      let priceOptions = document.getElementsByClassName("price");
-      let above = document.getElementById("above");
-      let below = document.getElementById("below");
-
-      if(priceOptions.selected = priceOptions[0]){
-        if(below.selected == True){
-          alert("You cannot chose the lowest price and consider price ranges below it. Please uncheck the first checkbox.");
-        }
-      }
-      if(priceOptions.selected = priceOptions[10]){
-        if(above.selected == True){
-          alert("You cannot chose the highest price and consider price ranges above it. Please uncheck the second checkbox.");
-        }
-      }
-      if(priceOptions.selected = priceOptions[11]){
-          alert("You cannot chose an unlimited price and consider price ranges above/below it. Please uncheck both checkboes.");
-    }
-  }
+  //   function pricefx(){
+  //     let priceOptions = document.getElementsByClassName("price");
+  //     let above = document.getElementById("above");
+  //     let below = document.getElementById("below");
+  //
+  //     if(priceOptions.selected = priceOptions[0]){
+  //       if(below.selected == True){
+  //         alert("You cannot chose the lowest price and consider price ranges below it. Please uncheck the first checkbox.");
+  //       }
+  //     }
+  //     if(priceOptions.selected = priceOptions[10]){
+  //       if(above.selected == True){
+  //         alert("You cannot chose the highest price and consider price ranges above it. Please uncheck the second checkbox.");
+  //       }
+  //     }
+  //     if(priceOptions.selected = priceOptions[11]){
+  //         alert("You cannot chose an unlimited price and consider price ranges above/below it. Please uncheck both checkboes.");
+  //   }
+  // }
 
 })();

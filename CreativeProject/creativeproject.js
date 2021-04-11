@@ -14,6 +14,15 @@
 
         document.getElementById("next3").onclick = next3;
 
+        document.getElementById("LAButton").onclick = showLA;
+
+    }
+
+    function showLA(){
+      let libOptions = document.createElement("div");
+
+
+
     }
 
 
@@ -23,17 +32,16 @@
         document.querySelector("body").style.backgroundImage = "none";
         let i = 0;
           let timerId = setInterval(function(){
-            if(i == Infinity){ // if i is 0, stop timer and time up prints in console if console.log()
+            if(i == Infinity){
               clearInterval(timerId);
               console.log("Time is up!");
               time.innerHTML = i + "seconds";
             }
             else{
-              // innerHTML = everything btwn open and close startGame
 
               console.log(i + "...");
               time.innerHTML = i + " seconds";
-            //  document.write(time.innerHTML);
+
               i++;
             }
           }, 1000);

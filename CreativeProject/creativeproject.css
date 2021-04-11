@@ -1,10 +1,11 @@
 
 #title {
+  padding-top: 10px;
     text-align: center;
     margin-top: 350;
     border: 2px solid black;
     background-color: white;
-    height: 250px;
+    height: 325px;
     width: 725px;
     margin-left: 270px;
 }

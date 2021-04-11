@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     window.onload = function () {
-    //  document.getElementById("begin").onclick = startQuiz;
+        document.getElementById("begin").onclick = startQuiz;
 
         document.getElementById("start").onclick = form1;
 
@@ -23,25 +23,22 @@
 
     }
 
-  //   function startQuiz(){
-  //
-  //       let i = 60; // sets i to 60 seconds
-  //           let timerId = setInterval(function(){
-  //               if(i === 0){ // if i is 0, stop timer and time up prints in console if console.log()
-  //                 clearInterval(timerId);
-  //                 console.log("Time is up!");
-  //                 time.innerHTML = i;
-  //               }
-  //               else{
-  //                 // innerHTML = everything btwn open and close startGame
-  //                 //
-  //                 console.log(i + "...");
-  //                 time.innerHTML = i + " seconds";
-  //                 i--;
-  //               }
-  //           }, 1000); // runs function every 1000 milliseconds (1 second)
-  //
-  // }
+    function startQuiz(){
+        let i = 60; // sets i to 60 seconds
+            let timerId = setInterval(function(){
+                if(i === 0){
+                  clearInterval(timerId);
+                  form1();
+                  time.innerHTML = i;
+                }
+                else{
+
+                  time.innerHTML = i + " seconds";
+                  i--;
+                }
+            }, 1000);
+
+  }
 
     function form1 (){
         document.querySelector("#main-view").classList.add("hidden");

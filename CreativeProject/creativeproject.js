@@ -1,7 +1,6 @@
 (function () {
     "use strict";
     window.onload = function () {
-        document.getElementById("begin").onclick = startQuiz;
 
         document.getElementById("start").onclick = form1;
 
@@ -11,29 +10,30 @@
 
         document.getElementById("back2").onclick = back2;
 
-         document.getElementById("next2").onclick = next2;
+        document.getElementById("next2").onclick = next2;
 
         document.getElementById("back3").onclick = back3;
 
-        document.getElementById("next3").onclick = next3;
-
         document.getElementById("libarts").onclick = showLA;
 
+        document.getElementById("next3").onclick = next3;
+
+        document.getElementById("begin").onclick = startQuiz;
 
 
     }
 
     function startQuiz(){
+      let time0 = document.getElementById("time0");
         let i = 60; // sets i to 60 seconds
             let timerId = setInterval(function(){
                 if(i === 0){
                   clearInterval(timerId);
-                  form1();
-                  time.innerHTML = i;
+                  alert("It has been 60 seconds, if you are still using this page, please click the start button.");
+                  time0.innerHTML = i;
                 }
                 else{
-
-                  time.innerHTML = i + " seconds";
+                  time0.innerHTML = i + " seconds";
                   i--;
                 }
             }, 1000);
@@ -135,9 +135,29 @@
       princetonLink.appendChild(princetonText);
       princetonLink.title = "Princeton's Take on Liberal Arts";
       princetonLink.href = "https://admission.princeton.edu/academics/what-does-liberal-arts-mean";
-      document.body.appendChild(princetonLink);
+      document.getElementById("opinions").appendChild(princetonLink);
 
 
     }
+
+    function pricefx(){
+      let priceOptions = document.getElementsByClassName("price");
+      let above = document.getElementById("above");
+      let below = document.getElementById("below");
+
+      if(priceOptions.selected = priceOptions[0]){
+        if(below.selected == True){
+          alert("You cannot chose the lowest price and consider price ranges below it. Please uncheck the first checkbox.");
+        }
+      }
+      if(priceOptions.selected = priceOptions[10]){
+        if(above.selected == True){
+          alert("You cannot chose the highest price and consider price ranges above it. Please uncheck the second checkbox.");
+        }
+      }
+      if(priceOptions.selected = priceOptions[11]){
+          alert("You cannot chose an unlimited price and consider price ranges above/below it. Please uncheck both checkboes.");
+    }
+  }
 
 })();

@@ -85,9 +85,5 @@
       document.getElementById("resultList").appendChild(results);
 
     }
-
-
-
-
-
+    
 })();

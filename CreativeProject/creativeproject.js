@@ -14,10 +14,11 @@
 
         document.getElementById("back3").onclick = back3;
 
-        document.getElementById("libarts").onclick = showLA;
-
         document.getElementById("next3").onclick = next3;
-
+        
+        document.getElementById("back4").onclick = back4;
+        
+//        document.getElementById("libarts").onclick = showLA;
         //document.getElementById("begin").onclick = startQuiz;
 
 
@@ -120,22 +121,33 @@
     }
 
     function next3 (){
-      document.querySelector("#form3").classList.add("hidden");
-      document.querySelector("#form4").classList.remove("hidden");
+    document.querySelector("#form4").classList.remove("hidden");
+        document.querySelector("#form3").classList.add("hidden");
+        
+        var header = document.creatElement("h1");
+        var t = document.createTextnode("Your Results: ");
+        header.appendChild(t);
+        document.getElementById("header").appendChild(header);
+        
       let results = document.createElement("p");
       results.title = "results go here";
       document.getElementById("resultList").appendChild(results);
 
+    }
+    
+    function back4 (){
+        document.querySelector("#form3").classList.remove("hidden");
+        document.querySelector("#form4").classList.add("hidden");
 
     }
-
+    
     function showLA(){
       var princetonLink = document.createElement("a");
       var princetonText = document.createTextNode("Princeton's Take on Liberal Arts");
       princetonLink.appendChild(princetonText);
       princetonLink.title = "Princeton's Take on Liberal Arts";
       princetonLink.href = "https://admission.princeton.edu/academics/what-does-liberal-arts-mean";
-      document.getElementById("opinions").appendChild(princetonLink);
+      document.getElementById("opinions").append(princetonLink);
 
 
     }

@@ -18,12 +18,13 @@
         
         document.getElementById("back4").onclick = back4;
         
-//        document.getElementById("libarts").onclick = showLA;
-        //document.getElementById("begin").onclick = startQuiz;
+        document.getElementById("libarts").onclick = showLA;
+        document.getElementById("begin").onclick = startQuiz;
 
 
     }
-
+    
+//timer//
     function startQuiz(){
       let time0 = document.getElementById("time0");
         let i = 60; // sets i to 60 seconds
@@ -124,15 +125,21 @@
     document.querySelector("#form4").classList.remove("hidden");
         document.querySelector("#form3").classList.add("hidden");
         
+        //create element 1//
         var header = document.creatElement("h1");
         var t = document.createTextnode("Your Results: ");
         header.appendChild(t);
         document.getElementById("header").appendChild(header);
-        
+    
+        //create element 2//  
       let results = document.createElement("p");
       results.title = "results go here";
-      document.getElementById("resultList").appendChild(results);
-
+      document.getElementByClassName("resultList").appendChild(results);
+        
+         //create element 3//  
+      let helpnotice = document.createElement("p");
+      helpnotice.title = "Need further help?";
+      document.getElementById("help").appendChild(helpnotice);
     }
     
     function back4 (){

@@ -18,101 +18,97 @@
         
         document.getElementById("back4").onclick = back4;
         
-        document.getElementById("libarts").onclick = showLA;
-        document.getElementById("begin").onclick = startQuiz;
+//        document.getElementById("libarts").onclick = showLA;
+//        
+//        document.getElementById("begin").onclick = startQuiz;
 
 
     }
     
-//timer//
-    function startQuiz(){
-      let time0 = document.getElementById("time0");
-        let i = 60; // sets i to 60 seconds
-            let timerId = setInterval(function(){
-                if(i === 0){
-                  clearInterval(timerId);
-                  alert("It has been 60 seconds, if you are still using this page, please click the start button.");
-                  time0.innerHTML = i;
+    //Time bar for Form1 where divs are an ID//
+            var i = 0;
+            function move() {
+              if (i == 0) {
+                i = 1;
+                var progress = document.getElementById("myBar");
+                  console.log(progress)
+                var width = 1;
+                var timeout = setInterval(frame, 1500);
+                function frame() {
+                  if (width >= 3000) {
+                    clearInterval(timeout);
+                      alert("You have run out of time. Would you like to start again? If so please refresh the page.");
+                    i = 0;
+                  } else {
+                    width++;
+                    progress.style.width = width + "%";
+                  }
                 }
-                else{
-                  time0.innerHTML = i + " seconds";
-                  i--;
+              } 
+            }
+        //Time bar for Form2 and 3 where divs are a class -> maybe need to make an array!!//
+                var i = 0;
+            function moveClass() {
+                var progress = document.querySelectorAll("myBar");
+                for (let i = 0; i > progress.length; i++){
+                     if (i == 0) {
+                    i = 1;
+                    console.log(progress)
+                    var width = 1;
+                    var timeout = setInterval(frame, 1500);
+                    function frame() {
+                        if (width >= 3000) {
+                            clearInterval(timeout);
+                        alert("You have run out of time. Would you like to start again? If so please refresh the page.");
+                        i = 0;
+                  } else {
+                    width++;
+                    progress.style.width = width + "%";
+                  }
                 }
-            }, 1000);
-
-  }
+              } 
+            }
+            }
+    
+//    function ClearMove(){
+//        var progress = document.getElementById("myBar");
+//        progress.style.width = "1%"
+//        i = 0;
+//        move();
+//    }
 
     function form1 (){
         document.querySelector("#main-view").classList.add("hidden");
         document.querySelector("#form1").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
-        let time = document.getElementById("time");
-        let i = 0;
-          let timerId = setInterval(function(){
-            if(i == 300){
-              clearInterval(timerId);
-              next1();
-              time.innerHTML = i + "seconds";
-            }
-            else{
-              console.log(i + "...");
-              time.innerHTML = i + " seconds";
-              i++;
-            }
-          }, 1000);
-    }
+        move();
+}
+
 
     function back1 (){
          document.querySelector("#main-view").classList.remove("hidden");
         document.querySelector("#form1").classList.add("hidden");
          document.querySelector("body").style.backgroundImage = "url(college-students.jpeg)";
+        
     }
 
     function next1 (){
         document.querySelector("#form1").classList.add("hidden");
         document.querySelector("#form2").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
-        let time2 = document.getElementById("time2");
-        let i = 0;
-          let timerId = setInterval(function(){
-            if(i == 300){
-              clearInterval(timerId);
-              time2.innerHTML = i + "seconds";
-              next2();
-            }
-            else{
-
-              console.log(i + "...");
-              time2.innerHTML = i + " seconds";
-              i++;
-            }
-          }, 1000);
+        moveClass();
     }
 
     function back2 (){
          document.querySelector("#form1").classList.remove("hidden");
         document.querySelector("#form2").classList.add("hidden");
-
     }
 
        function next2 (){
         document.querySelector("#form2").classList.add("hidden");
         document.querySelector("#form3").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
-        let time3 = document.getElementById("time3");
-        let i = 0;
-          let timerId = setInterval(function(){
-            if(i == 300){
-              clearInterval(timerId);
-              time3.innerHTML = i + "seconds";
-              next3();
-            }
-            else{
-              console.log(i + "...");
-              time3.innerHTML = i + " seconds";
-              i++;
-            }
-          }, 1000);
+        moveClass();
     }
 
     function back3 (){
@@ -124,22 +120,22 @@
     function next3 (){
     document.querySelector("#form4").classList.remove("hidden");
         document.querySelector("#form3").classList.add("hidden");
-        
+        fetchAdmission();
         //create element 1//
-        var header = document.creatElement("h1");
-        var t = document.createTextnode("Your Results: ");
-        header.appendChild(t);
-        document.getElementById("header").appendChild(header);
-    
-        //create element 2//  
-      let results = document.createElement("p");
-      results.title = "results go here";
-      document.getElementByClassName("resultList").appendChild(results);
-        
-         //create element 3//  
-      let helpnotice = document.createElement("p");
-      helpnotice.title = "Need further help?";
-      document.getElementById("help").appendChild(helpnotice);
+//        var header = document.creatElement("h1");
+//        var t = document.createTextnode("Your Results: ");
+//        header.appendChild(t);
+//        document.getElementById("header").appendChild(header);
+//    
+//        //create element 2//  
+//      let results = document.createElement("p");
+//      results.title = "results go here";
+//      document.getElementByClassName("resultList").appendChild(results);
+//        
+//         //create element 3//  
+//      let helpnotice = document.createElement("p");
+//      helpnotice.title = "Need further help?";
+//      document.getElementById("help").appendChild(helpnotice);
     }
     
     function back4 (){
@@ -155,7 +151,6 @@
       princetonLink.title = "Princeton's Take on Liberal Arts";
       princetonLink.href = "https://admission.princeton.edu/academics/what-does-liberal-arts-mean";
       document.getElementById("opinions").append(princetonLink);
-
 
     }
 
@@ -179,4 +174,22 @@
   //   }
   // }
 
+    const url = "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=1BrgxwOZt8gbORb2UlRu39hXhXV5Xjc3QCxQQwCg"
+    
+    function fetchAdmission(){
+        fetch(url)
+        .then(checkStatus)
+        .then((resp) => resp.message())
+        .then(function(data) {
+        console.log(data)
+        });
+    }
+    
+      function checkStatus(response) {
+        if (response.status >= 200 && response.status < 300 || response.status == 0) {
+            return response.text();
+        } else {
+        return Promise.reject(new Error(response.status + ": " + response.statusText));
+        }
+    }
 })();

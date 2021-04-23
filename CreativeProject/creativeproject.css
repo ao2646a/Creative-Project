@@ -56,13 +56,16 @@ img{
 button{
     background-color: white;
     font-weight: 600;
-
+    font-size: 17px;
+    padding: 5px;
+    margin-top: 5px;
 }
 
 footer{
     margin-top: 100px;
     width: 1200;
     background-color: white;
+    display: inline-block;
 }
 
 .hidden{
@@ -184,4 +187,16 @@ footer{
     padding: 10px;
     background-color: white;
     font-size: 20px;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: white;
+    border: 1px solid black;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: skyblue;
 }

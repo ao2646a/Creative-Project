@@ -33,9 +33,9 @@
                 var progress = document.getElementById("myBar");
                   console.log(progress)
                 var width = 1;
-                var timeout = setInterval(frame, 1500);
+                var timeout = setInterval(frame, 3000);
                 function frame() {
-                  if (width >= 3000) {
+                  if (width >= 30000) {
                     clearInterval(timeout);
                       alert("You have run out of time. Would you like to start again? If so please refresh the page.");
                     i = 0;
@@ -46,36 +46,47 @@
                 }
               } 
             }
-        //Time bar for Form2 and 3 where divs are a class -> maybe need to make an array!!//
-                var i = 0;
-            function moveClass() {
-                var progress = document.querySelectorAll("myBar");
-                for (let i = 0; i > progress.length; i++){
-                     if (i == 0) {
-                    i = 1;
-                    console.log(progress)
-                    var width = 1;
-                    var timeout = setInterval(frame, 1500);
-                    function frame() {
-                        if (width >= 3000) {
-                            clearInterval(timeout);
-                        alert("You have run out of time. Would you like to start again? If so please refresh the page.");
-                        i = 0;
+    
+            function movesecond() {
+              if (i == 0) {
+                i = 1;
+                var progress2 = document.getElementById("bar2");
+                  console.log(progress2)
+                var width2 = 1;
+                var timeout2 = setInterval(frame2, 3000);
+                function frame2() {
+                  if (width2 >= 30000) {
+                    clearInterval(timeout2);
+                      alert("You have run out of time. Would you like to start again? If so please refresh the page.");
+                    i = 0;
                   } else {
-                    width++;
-                    progress.style.width = width + "%";
+                    width2++;
+                    progress2.style.width = width3 + "%";
                   }
                 }
               } 
             }
+
+            function movethird() {
+              if (i == 0) {
+                i = 1;
+                var progress3 = document.getElementById("bar3");
+                  console.log(progress3)
+                var width3 = 1;
+                var timeout3 = setInterval(frame3, 3000);
+                function frame3() {
+                  if (width3 >= 30000) {
+                    clearInterval(timeout);
+                      alert("You have run out of time. Would you like to start again? If so please refresh the page.");
+                    i = 0;
+                  } else {
+                    width3++;
+                    progress3.style.width = width3 + "%";
+                  }
+                }
+              } 
             }
-    
-//    function ClearMove(){
-//        var progress = document.getElementById("myBar");
-//        progress.style.width = "1%"
-//        i = 0;
-//        move();
-//    }
+
 
     function form1 (){
         document.querySelector("#main-view").classList.add("hidden");
@@ -93,10 +104,10 @@
     }
 
     function next1 (){
+        movesecond();
         document.querySelector("#form1").classList.add("hidden");
         document.querySelector("#form2").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
-        moveClass();
     }
 
     function back2 (){
@@ -105,16 +116,16 @@
     }
 
        function next2 (){
+        movethird();
         document.querySelector("#form2").classList.add("hidden");
         document.querySelector("#form3").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
-        moveClass();
+
     }
 
     function back3 (){
         document.querySelector("#form2").classList.remove("hidden");
         document.querySelector("#form3").classList.add("hidden");
-
     }
 
     function next3 (){

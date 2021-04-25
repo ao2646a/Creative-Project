@@ -31,7 +31,11 @@
               if (i == 0) {
                 i = 1;
                 var progress = document.getElementById("myBar");
+                var progress2 = document.getElementById("bar2");
+                var progress3 = document.getElementById("bar3");
                   console.log(progress)
+                  console.log(progress2)
+                  console.log(progress3)
                 var width = 1;
                 var timeout = setInterval(frame, 3000);
                 function frame() {
@@ -42,51 +46,22 @@
                   } else {
                     width++;
                     progress.style.width = width + "%";
+                    progress2.style.width = width + "%";
+                    progress3.style.width = width + "%";
                   }
                 }
               } 
             }
     
-            function movesecond() {
-              if (i == 0) {
-                i = 1;
-                var progress2 = document.getElementById("bar2");
-                  console.log(progress2)
-                var width2 = 1;
-                var timeout2 = setInterval(frame2, 3000);
-                function frame2() {
-                  if (width2 >= 30000) {
-                    clearInterval(timeout2);
-                      alert("You have run out of time. Would you like to start again? If so please refresh the page.");
-                    i = 0;
-                  } else {
-                    width2++;
-                    progress2.style.width = width3 + "%";
-                  }
-                }
-              } 
-            }
-
-            function movethird() {
-              if (i == 0) {
-                i = 1;
-                var progress3 = document.getElementById("bar3");
-                  console.log(progress3)
-                var width3 = 1;
-                var timeout3 = setInterval(frame3, 3000);
-                function frame3() {
-                  if (width3 >= 30000) {
-                    clearInterval(timeout);
-                      alert("You have run out of time. Would you like to start again? If so please refresh the page.");
-                    i = 0;
-                  } else {
-                    width3++;
-                    progress3.style.width = width3 + "%";
-                  }
-                }
-              } 
-            }
-
+    function clearProgress(){
+        var i = 0;
+        var progress = document.getElementById("myBar");
+        var progress2 = document.getElementById("bar2");
+        var progress3 = document.getElementById("bar3");
+        progress.style.width = "1" + "%";
+        progress2.style.width = "1" + "%";
+        progress3.style.width = "1" + "%";
+    }
 
     function form1 (){
         document.querySelector("#main-view").classList.add("hidden");
@@ -100,32 +75,40 @@
          document.querySelector("#main-view").classList.remove("hidden");
         document.querySelector("#form1").classList.add("hidden");
          document.querySelector("body").style.backgroundImage = "url(college-students.jpeg)";
+        clearProgress();
+        move();
         
     }
 
     function next1 (){
-        movesecond();
         document.querySelector("#form1").classList.add("hidden");
         document.querySelector("#form2").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
+        clearProgress();
+        move();
     }
 
     function back2 (){
          document.querySelector("#form1").classList.remove("hidden");
         document.querySelector("#form2").classList.add("hidden");
+        clearProgress();
+        move();
     }
 
        function next2 (){
-        movethird();
         document.querySelector("#form2").classList.add("hidden");
         document.querySelector("#form3").classList.remove("hidden");
         document.querySelector("body").style.backgroundImage = "none";
+           clearProgress();
+           move();
 
     }
 
     function back3 (){
         document.querySelector("#form2").classList.remove("hidden");
         document.querySelector("#form3").classList.add("hidden");
+        clearProgress();
+        move();
     }
 
     function next3 (){
